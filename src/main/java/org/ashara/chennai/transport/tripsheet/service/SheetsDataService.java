@@ -26,8 +26,11 @@ public class SheetsDataService {
     @PostConstruct
     public void init() {
         try {
+            System.out.println("LOGE 1 ");
             sheets = gSheetsReaderService.getSheetsService();
+            System.out.println("LOGE 2 ");
             headingList = gSheetsReaderService.fetchSheetData(sheets).getFirst();
+            System.out.println("LOGE 3");
         }
         catch (Exception e) {
             System.out.println("Exception while reading Sheets: " + e);
