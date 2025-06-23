@@ -8,20 +8,16 @@ import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
+import java.io.FileInputStream;
 import java.util.*;
 
 
 @Service
 public class GSheetsReaderService {
 
-    @Autowired
-    ResourceLoader resourceLoader;
 
     private static final String APPLICATION_NAME = "Google Sheets Monitor";
 
@@ -30,6 +26,9 @@ public class GSheetsReaderService {
 
     @Value("${gsheets.spreadsheet.range}")
     private String RANGE;
+
+    @Value("${google.credentials.path}")
+    private String credentialsPath;
 
     public void readSheets() {
         try {
@@ -58,8 +57,8 @@ public class GSheetsReaderService {
 
     public Sheets getSheetsService() throws Exception {
 
-        Resource resource = resourceLoader.getResource("classpath:credentials-transport.json");
-        GoogleCredentials credentials = GoogleCredentials.fromStream(resource.getInputStream())
+        FileInputStream fileInputStream = new FileInputStream(credentialsPath);
+        GoogleCredentials credentials = GoogleCredentials.fromStream(fileInputStream)
                 .createScoped(List.of(SheetsScopes.SPREADSHEETS));
         return new Sheets.Builder(
                 GoogleNetHttpTransport.newTrustedTransport(),
