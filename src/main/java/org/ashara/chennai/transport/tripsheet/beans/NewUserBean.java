@@ -1,9 +1,5 @@
 package org.ashara.chennai.transport.tripsheet.beans;
 
-import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
-
 public class NewUserBean {
 
     private String itsNumber;
