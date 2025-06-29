@@ -15,7 +15,6 @@ public class MDCFilter implements Filter{
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         try {
-            System.out.println("Inside the filters");
             String mdcToken = UUID.randomUUID().toString()
                     .replace("-","").substring(0,12).toUpperCase();
             MDC.put(MDC_TOKEN, mdcToken);
