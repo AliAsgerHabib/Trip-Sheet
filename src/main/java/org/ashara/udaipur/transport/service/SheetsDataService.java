@@ -1,8 +1,8 @@
-package org.ashara.chennai.transport.tripsheet.service;
+package org.ashara.udaipur.transport.service;
 
 import com.google.api.services.sheets.v4.Sheets;
 import jakarta.annotation.PostConstruct;
-import org.ashara.chennai.transport.tripsheet.beans.BusEntryBean;
+import org.ashara.udaipur.transport.beans.BusEntryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class SheetsDataService {
@@ -26,11 +25,8 @@ public class SheetsDataService {
     @PostConstruct
     public void init() {
         try {
-            System.out.println("LOGE 1 ");
             sheets = gSheetsReaderService.getSheetsService();
-            System.out.println("LOGE 2 ");
             headingList = gSheetsReaderService.fetchSheetData(sheets).getFirst();
-            System.out.println("LOGE 3");
         }
         catch (Exception e) {
             System.out.println("Exception while reading Sheets: " + e);

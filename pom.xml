@@ -8,11 +8,10 @@
 		<version>3.5.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.ashara.chennai.transport</groupId>
-	<artifactId>Trip-Sheet</artifactId>
+	<groupId>org.ashara.udaipur</groupId>
+	<artifactId>Ashara-Udaipur</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Trip-Sheet</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Ashara-Udaipur</name>
 	<url/>
 	<licenses>
 		<license/>

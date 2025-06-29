@@ -1,4 +1,4 @@
-package org.ashara.chennai.transport.tripsheet.exceptions;
+package org.ashara.udaipur.transport.exceptions;
 
 public class ErrorResponse {
 

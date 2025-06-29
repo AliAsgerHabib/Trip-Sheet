@@ -1,4 +1,4 @@
-package org.ashara.chennai.transport.tripsheet.exceptions;
+package org.ashara.udaipur.transport.exceptions;
 
 
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ResponseStatus
     public ErrorResponse handleException(ActCommonException ex) {
-        System.out.println("1============");
         return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
     }
 }

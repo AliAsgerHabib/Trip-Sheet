@@ -1,4 +1,4 @@
-package org.ashara.chennai.transport.tripsheet.beans;
+package org.ashara.udaipur.transport.beans;
 
 import java.util.List;
 
