@@ -2,12 +2,11 @@ package org.ashara.udaipur.transport;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-public class TripSheetApplication {
+public class AsharaUdaipurApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TripSheetApplication.class, args);
+		SpringApplication.run(AsharaUdaipurApplication.class, args);
 	}
 }
