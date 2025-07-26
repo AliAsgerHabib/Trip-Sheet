@@ -3,8 +3,9 @@ package org.ashara.udaipur.transport.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -26,15 +27,23 @@ public class Bus {
     private String driverContactNo;
 
     @Column
-    private Integer capacity;
+    private Integer maxCapacity;
+
+    @ManyToOne
+    @JoinColumn(name = "pickup_id")
+    private Point pickup;
+
+    @ManyToOne
+    @JoinColumn(name = "drop_off_id")
+    private Point dropOff;
 
     @ManyToOne
     @JoinColumn(name = "vendor_id")
     private Vendor vendor;
 
-    @Column
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 }

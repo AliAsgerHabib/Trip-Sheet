@@ -7,13 +7,12 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table
 @Getter
 @Setter
-public class Vendor {
+public class Point {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,22 +22,13 @@ public class Vendor {
     private String name;
 
     @Column
-    private String registeredCity;
+    private String zonalHeadName;
 
     @Column
-    private String registeredCountry;
+    private String zonalHeadContactNo;
 
     @Column
-    private String contactPersonName;
-
-    @Column
-    private String contactPersonNo;
-
-    @Column
-    private String contactPersonEmail;
-
-    @OneToMany(mappedBy = "vendor")
-    private List<Bus> buses;
+    private String zonalHeadEmail;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

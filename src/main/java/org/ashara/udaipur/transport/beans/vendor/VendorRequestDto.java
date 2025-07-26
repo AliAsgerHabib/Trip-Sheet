@@ -21,7 +21,7 @@ public class VendorRequestDto {
     @NotBlank(message = "Contact Person Name should not be blank")
     private String contactPersonName;
 
-    @NotBlank
+    @NotBlank(message = "Contact No should not be blank")
     @Pattern(regexp = "^\\+\\d{1,3}-\\d{10}$", message = "Invalid phone number format. Expected +<country-code>-XXXXXXXXXX")
     private String contactPersonNo;
 
