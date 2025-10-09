@@ -21,7 +21,7 @@ public class VendorController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseResource<VendorDto> create(@Valid @RequestBody VendorRequestDto vendorDTO) {
         VendorDto response = vendorService.create(vendorDTO);
-        return new ResponseResource<>(HttpStatus.OK, "SUCCESS", response);
+        return new ResponseResource<>(HttpStatus.CREATED, "SUCCESS", response);
     }
 
     @RequestMapping(value = "/{vendorId}", method = RequestMethod.GET)
